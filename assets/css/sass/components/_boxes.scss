@@ -103,3 +103,21 @@
   background-color: var(--gray-color);
   padding: 4px 10px;
 }
+table{
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+
+  tr{
+    th{
+      font-weight: 600;
+      color: var(--second-color);
+      background-color: var(--gray-color);
+    }
+    td, th{
+      border: 1px solid var(--dark-gray-color);
+      text-align: left;
+      padding:15px 15px;
+    }
+  }
+}

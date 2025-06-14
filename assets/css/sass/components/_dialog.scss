@@ -1,4 +1,31 @@
-dialog{
-    margin: 0 auto;
-    z-index: 999;
+.dialogOverlay {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  top: 0;
+  left: 0;
+  right: 0;
+}
+dialog {
+  margin: 0 auto;
+  z-index: 999;
+}
+.dialog {
+  margin: 0 auto;
+  z-index: 999;
+  width: 100%;
+  max-width: 700px;
+  height: 70vh;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 6px;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.8);
+  position: fixed;
+  .closeDialog {
+    position: absolute;
+    top: -60px;
+    right: 0;
+  }
 }

@@ -3,6 +3,7 @@
   --primary-color: #2d2d2d;
   --second-color:#dc143c;
   --gray-color:#eeebeb;
+  --dark-gray-color:#c9c9c9;
 }
 
 body {
@@ -22,7 +23,7 @@ body a {
 }
 
 .w-100 {
-  width: 100%;
+  width: 100% !important;
 }
 
 .container {
@@ -164,9 +165,54 @@ header nav a.active {
   padding: 4px 10px;
 }
 
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+}
+table tr th {
+  font-weight: 600;
+  color: var(--second-color);
+  background-color: var(--gray-color);
+}
+table tr td, table tr th {
+  border: 1px solid var(--dark-gray-color);
+  text-align: left;
+  padding: 15px 15px;
+}
+
+.dialogOverlay {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
 dialog {
   margin: 0 auto;
   z-index: 999;
+}
+
+.dialog {
+  margin: 0 auto;
+  z-index: 999;
+  width: 100%;
+  max-width: 700px;
+  height: 70vh;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 6px;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.8);
+  position: fixed;
+}
+.dialog .closeDialog {
+  position: absolute;
+  top: -60px;
+  right: 0;
 }
 
 ul li:not(:first-child) {

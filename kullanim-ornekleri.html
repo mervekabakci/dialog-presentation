@@ -23,8 +23,8 @@
             </nav>
         </header>
         <div class="boxes full">
-            <div class="box" data-aos="fade-up" data-aos-duration="1000">
-                 <div class="boxTitle">
+             <div class="box" data-aos="fade-up" data-aos-duration="1000">
+                <div class="boxTitle">
                     <h2>Kullanım Örnekleri</h2>
                 </div>
                 <div class="boxBody">
@@ -34,8 +34,6 @@
                     <p>
                         <code>&lt;dialog&gt;</code> elementinin en basit kullanımı aşağıdaki gibidir. Burada herhangi bir stil eklenmemiştir.
                     </p>
-
-                    
                     <a class="fixBtn" href="#" id="openModal">Open Dialog</a>
                 
                     <dialog class="basicDialog">
@@ -60,56 +58,150 @@
                             </dialog>
                         </code>
                     </pre>
+                    <strong>CSS kodu</strong>
+                    <pre>
+                        <code class="language-css">
+                            dialog {
+                                margin: 0 auto;
+                                z-index: 999;
+                            }
+                        </code>
+                    </pre>
 
-
+                    <strong>Javascript kodu</strong>
+                    <pre>
+                        <code class="language-js">
+                            //dialog penceresini Kapatır
+                            function closeBasicDialog(e){
+                                e.preventDefault();
+                                document.querySelector(".basicDialog").close();
+                            }
+                            //dialog penceresını acar
+                            function showBasicDialog(e){
+                                e.preventDefault();
+                                console.log("dialog ac");
+                                document.querySelector(".basicDialog").show();
+                            }
+                            //dialog ac kapat tetikleyici butonlar
+                            openModal.addEventListener("click", showBasicDialog);
+                            closeModal.addEventListener("click", closeBasicDialog);
+                        </code>
+                    </pre>
                 </div>
             </div>
+            <div class="box">
+                <div class="boxBody">
+                    <div class="codeTitle">
+                        Stil ile kullanım
+                    </div>
+                    <p>
+                        <code>&lt;dialog&gt;</code> elementinin stil eklenmiş versiyonu ve çoklu kullanım
+                    </p>
+                    
+                    <a class="fixBtn openDialogButton" href="#">Open Dialog</a>
+                    <dialog class="dialog">
+                        <p>Merhaba bu bir Dialog penceresi</p>
+                        <a class="fixBtn closeDialog" href="#">X</a>
+                    </dialog>
+                    <a class="fixBtn openDialogButton" href="#">Open Dialog</a>
+                    <dialog class="dialog">
+                        <p>Merhaba bu bir Dialog penceresi 2</p>
+                        <a class="fixBtn closeDialog" href="#">X</a>
+                    </dialog>
+                    <a class="fixBtn openDialogButton" href="#">Open Dialog</a>
+                    <dialog class="dialog">
+                        <p>
+                            Bu bir dialog penceresi 3
+                        </p>
+
+                        <a class="fixBtn closeDialog" href="#">X</a>
+                    </dialog>
+                    <strong>Html kod çıktısı</strong>
+                    <pre>
+                        <code class="language-html">
+                            <a class="fixBtn openDialogButton" href="#">Open Dialog</a>
+                            
+                            <dialog class="dialog">
+                                <p>Merhaba bu bir Dialog penceresi</p>
+                                <a class="fixBtn closeDialog" href="#">X</a>
+                            </dialog>
+                        </code>
+                    </pre>
+
+                    <strong>SCSS kodu</strong>
+                    <pre>
+                        <code class="language-css">
+                            .dialog {
+                                margin: 0 auto;
+                                z-index: 999;
+                                width: 100%;
+                                max-width: 700px;
+                                height: 70vh;
+                                top: 50%;
+                                transform: translateY(-50%);
+                                border-radius: 6px;
+                                border: none;
+                                box-shadow: rgba(0, 0, 0, 0.8);
+                                position: fixed;
+                                .closeDialog {
+                                    position: absolute;
+                                    top: -60px;
+                                    right: 0;
+                                }
+                            }
+                            .dialogOverlay {
+                                position: fixed;
+                                width: 100vw;
+                                height: 100vh;
+                                background-color: rgba(0, 0, 0, 0.8);
+                                top: 0;
+                                left: 0;
+                                right: 0;
+                            }
+                        </code>
+                    </pre>
+
+                    <strong>Javascript kodu</strong>
+                    <pre>
+                        <code class="language-js">
+                            const dialogs = document.querySelectorAll(".dialog");
+                            const dialogButtons = document.querySelectorAll('.openDialogButton');
+                            const closeDialogButtons = document.querySelectorAll('.closeDialog');
+                            const body = document.querySelector("body");
+                            const createDiv = document.createElement('div');
+
+                            function handleClick(e){
+                                e.preventDefault();
+                                const nextDialog = this.nextElementSibling;
+                                nextDialog.show();
+
+                                body.style.overflow = "hidden";
+                                
+                                body.append(createDiv);
+                                createDiv.classList.add("dialogOverlay");
+                            }
+
+                            for(const dialogButton of dialogButtons){
+                                dialogButton.addEventListener("click", handleClick);
+                            }
+
+                            function handleClickClose(e){
+                                e.preventDefault();
+                                this.parentElement.close();
+                                createDiv.remove();
+                                body.style.overflow = "auto";
+                            }
+
+                            for(const closeDialog of closeDialogButtons){
+                                closeDialog.addEventListener("click", handleClickClose);
+                            }
+                        </code>
+                    </pre>
+                </div>
+            </div>
+           
         </div>
 
-
-        
-        <pre>
-            <code class="language-css">
-                p { 
-                    color: red 
-                }
-                main{
-                    width:100%;
-                }
-            </code>
-        </pre>
-        <pre>
-            <code class="language-js">
-                const dialogs = document.querySelectorAll("dialog");
-                for(const dialog of dialogs){
-                    dialog.addEventListener("click", function(){
-                        console.log("this");
-                    })
-                }
-            </code>
-        </pre>
-        <pre>
-            <code class="language-html">
-                <dialog>
-                    <div>Hello world</div>
-                </dialog>
-            </code>
-        </pre>
-        <pre>
-            <code class="language-html">
-                <dialog>
-                    <div>Hello world</div>
-                </dialog>
-            </code>
-        </pre>
-        <pre>
-            <code class="language-html">
-                <dialog>
-                    <div>Hello world</div>
-                </dialog>
-            </code>
-        </pre>
-        
     </div>
 
 

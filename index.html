@@ -100,7 +100,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="box" data-aos="fade-left" data-aos-easing="ease-out-cubic" data-aos-duration="3000">
+            <div class="box" data-aos="fade-right" data-aos-easing="ease-out-cubic" data-aos-duration="3000">
                 <div class="boxTitle">
                     <h2>Avantajları (Artıları)</h2>
                 </div>
@@ -129,6 +129,50 @@
                         <li><b>Focus yönetimi:</b> Modal dialog açıldığında focus otomatik dialog içine gelir, ama özel durumlarda manuel yönetim gerekebilir.</li>
                         <li><b>Tab sırası ve keyboard navigasyon: </b>Doğru yönetilmezse kullanıcı deneyimi olumsuz etkilenebilir.</li>
                     </ul>
+                </div>
+            </div>
+            <div class="box w-100" data-aos="fade-left" data-aos-easing="ease-out-cubic" data-aos-duration="3000">
+                <div class="boxTitle">
+                    <h2>Modal ve Dialog arasında ne fark var?</h2>
+                </div>
+                <div class="boxBody">
+                    <table>
+                        <tr>
+                            <th>Özellik</th>
+                            <th><code>&lt;dialog&gt;</code></th>
+                            <th>Modal (Genel Anlamda)</th>
+                        </tr>
+                        <tr>
+                            <th>HTML Etiketi</th>
+                            <td>✅ Evet (<code>&lt;dialog&gt;</code>)</td>
+                            <td>❌ Hayır (etiket değil, bir "desen")</td>
+                        </tr>
+                        <tr>
+                            <th>Yerleşik Tarayıcı Desteği</th>
+                            <td>✅ Var</td>
+                            <td>❌ Kütüphane ile yapılır</td>
+                        </tr>
+                        <tr>
+                            <th>Modal Davranışı</th>
+                            <td>.showModal() ile olur</td>
+                            <td>CSS/JS ile yapılır</td>
+                        </tr>
+                        <tr>
+                            <th>Arka plan etkileşimi</th>
+                            <td>✋ Engellenebilir (modal modda)</td>
+                            <td>✋ Engellenir</td>
+                        </tr>
+                        <tr>
+                            <th>Kapatma	</th>
+                            <td>.close() veya &lt;form method="dialog"&gt;</td>
+                            <td>JS event ile yapılır</td>
+                        </tr>
+                        <tr>
+                            <th>Stil ve Özelleştirme</th>
+                            <td>Sınırlı CSS desteği (varsayılan stil)</td>
+                            <td>Tam kontrol sende</td>
+                        </tr>
+                    </table>
                 </div>
             </div>
         </div>
