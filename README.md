@@ -1,4 +1,4 @@
-Bu projede HTML <dialog> elementinde aşağıdaki konu başlıklarını içeren anlatımlar mevcut.
+Bu projede HTML dialog elementinde aşağıdaki konu başlıklarını içeren anlatımlar mevcut.
 
 1.HTML <dialog> Nedir?  <br>
 2.<dialog> Ne İşe Yarar? <br>
