@@ -32,6 +32,8 @@ body a {
   margin: 0 auto;
   padding: 30px 16px;
   width: 100%;
+  position: relative;
+  overflow: hidden;
 }
 
 .fixBtn {
