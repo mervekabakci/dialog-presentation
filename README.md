@@ -8,5 +8,6 @@ Bu projede HTML dialog elementinde aşağıdaki konu başlıklarını içeren an
 6.API ve Davranış <br>
 7.Avantajları (Artıları) <br>
 8.Dezavantajları ve Dikkat Edilmesi Gerekenler <br>
+9.Modal ve Dialog arasında ne fark var?
 
 Bunların dışında <dialog> elementinin kullanımı ile ilgili örneklerde eklenmiştir.
