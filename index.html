@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dialog</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/plugins/prism/prism.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <link rel="stylesheet" href="assets/css/app.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav>
+                <a class="active" href="index.html">dialog Nedir?</a>
+                <a href="kullanim-ornekleri.html">Kullanım Örnekleri</a>
+            </nav>
+        </header>
+        <div class="boxes">
+            <div class="box" data-aos="fade-right" data-aos-easing="ease-out-cubic" data-aos-duration="1000">
+                <div class="boxTitle">
+                    <h2>HTML <code>&lt;dialog&gt;</code> Nedir?</h2>
+                </div>
+                <div class="boxBody">
+                    <ul>
+                        <li><code>&lt;dialog&gt;</code>, HTML ile gelen, kullanıcıya modal veya non-modal(açılır pencere tarzı) içerikler göstermek için kullanılan özel bir HTML elementidir.</li>
+                        <li>Kullanıcı arayüzünde açılır pencere, uyarı mesajı, onay kutusu, form veya ek bilgi sunmak için tasarlanmıştır.</li>
+                        <li><code>&lt;dialog&gt;</code> elementi, tarayıcı tarafından doğal olarak desteklenen bir "diyalog" kutusu sunar.</li>
+                        <li>İçeriği açıp kapatmak için Javascript ile <code>.show()</code>, <code>.showModal()</code> ve <code>.close()</code> gibi yöntemler kullanılır.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="box" data-aos="fade-left" data-aos-easing="ease-out-cubic" data-aos-duration="1000">
+                <div class="boxTitle">
+                    <h2><code>&lt;dialog&gt;</code> Ne İşe Yarar?</h2>
+                </div>
+                <div class="boxBody">
+                    <ul>
+                        <li>Sayfa içi modal veya modal olmayan pencereler oluşturmak için.</li>
+                        <li>Kullanıcı etkileşimli uyarılar, onaylar, formlar, bilgi kuruları göstermek için ideal.</li>
+                        <li>Geleneksel <b>Javascript</b> ile oluşturulan popup'lardan veya <b>kütüphanelerden</b> daha az kodla, daha erişilebilir ve standart uyumlu diyaloglar oluşturur.</li>
+                        <li>Sayfanın geri kalan içeriğini otomatik olarak engelleyen (modal) ya da engellemeyen (non-modal) kutular yaratabilirsin.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="box" data-aos="fade-right" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
+                <div class="boxTitle">
+                    <h2>Nerelerde Kullanılmalı?</h2>
+                </div>
+                <div class="boxBody">
+                    <ul>
+                        <li><b>Kullanıcıdan onay alınması gereken durumlarda:</b>  Örneğin; "Silmek istediğinize emin misiniz?"</li>
+                        <li><b>Form girişi yapılacak küçük alanlarda:</b> Örneğin; kullanıcıdan hızlı bilgi almak için açılan form.</li>
+                        <li><b>Bilgi göstermek için:</b> Uyarı, hata mesajı, işlem sonucu</li>
+                        <li><b>Etkinlik ve etkileşim artırıcı uygulamalarda:</b> Menü açılır pencereleri, detaylı bilgi gösterme.</li>
+                        <li><b>Alternatif modal dialog çözümlerine ihtiyaç duyulduğunda:</b> Bootstrap modal gibi harici kütüphanelere gerek kalmadan.</li>
+                    </ul>
+                </div>
+            </div>
+             <div class="box" data-aos="fade-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
+                <div class="boxTitle">
+                    <h2>Tarayıcı Desteği</h2>
+                </div>
+                <div class="boxBody">
+                    <ul>
+                        <li><b>Tam destek:</b> Chrome (desktop & Android), Edge, Firefox (desktop & Android), Safari (desktop & iOS)</li>
+                        <li><b>Desteklenmeyenler:</b> Internet Explorer hiç desteklemedi, bazı eski mobil tarayıcılarda hala sınırlamalar olabilir.</li>
+                        <li><b>Polyfill:</b> Eğer eski tarayıcılar hedefleniyorsa <a href="https://github.com/GoogleChrome/dialog-polyfill" target="_blank">dialog-polyfill</a> kullanılmalı.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="box" data-aos="fade-right" data-aos-easing="ease-out-cubic" data-aos-duration="3000">
+                <div class="boxTitle">
+                    <h2>Erişilebilirlik</h2>
+                </div>
+                <div class="boxBody">
+                    <ul>
+                        <li><code>&lt;dialog&gt;</code> otomatik olarak role="dialog" ve aria-modal="true" (modal modda) olarak davranır.</li>
+                        <li>Ancak focus yönetimini manuel kontrol etmek gerekebilir: Açıldığında dialog içindeki ilk etkileşimli elemente odaklanmak kullanıcı deneyimi için kritik.</li>
+                        <li>Tab tuşu ile dışarı çıkış (focus trap) doğal olarak sağlanıyor, ama bazı özel durumlarda geliştirici müdahalesi gerekebilir.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="box" data-aos="fade-left" data-aos-easing="ease-out-cubic" data-aos-duration="3000">
+                <div class="boxTitle">
+                    <h2>API ve Davranış</h2>
+                </div>
+                <div class="boxBody">
+                    <ul>
+                        <li><code>.showModal()</code> modal açar, bu durumda sayfanın geri kalanı etkileşime kapatılır.</li>
+                        <li><code>.show()</code> non-modal açar, kullanıcı sayfanın diğer kısımlarıyla da etkileşimde olabilir.</li>
+                        <li><code>.close()</code> ile kapanır, returnValue özelliği kapanış nedenini belirlemek için kullanılır.</li>
+                        <li>Formlarda <code>method="dialog"</code> kullanımı standart destekleniyor, bu sayede form gönderimi dialog'u kapatabilir ve sonuç alınabilir.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="box" data-aos="fade-left" data-aos-easing="ease-out-cubic" data-aos-duration="3000">
+                <div class="boxTitle">
+                    <h2>Avantajları (Artıları)</h2>
+                </div>
+                <div class="boxBody">
+                    <ul>
+                        <li><b>Yerleşik ve native destek: </b>Doğrudan HTML standardının bir parçası olduğu için modern tarayıcılarda performanslı çalışır.</li>
+                        <li><b>Erişilebilirlik (accessibility):</b> Klavye ve ekran okuyucular ile uyumludur. role="dialog" ve aria-modal gibi erişilebilirlik özellikleri otomatik desteklenir.</li>
+                        <li><b>Kullanımı kolay:</b> JavaScript ile birkaç satırda kolayca kontrol edilebilir.</li>
+                        <li><b>Modal ve non-modal seçenekler:</b> Esneklik sağlar.</li>
+                        <li><b>CSS ile kolayca stil verilebilir:</b> İstediğin gibi tasarımını yapabilirsin.</li>
+                        <li><b>Harici kütüphanelere bağımlılık azaltır:</b> Daha az kod, daha az dosya, daha hızlı yükleme.</li>
+                        <li><b>Kullanıcı deneyimini artırır:</b> Kullanıcı ekranı kaplayan ve kilitleyen modal pencereler oluşturabilirsin.</li>
+                        <li><b>Formlarla doğal entegrasyon:</b> Form gönderimi veya iptali sonrası dialog otomatik kapanabilir.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="box" data-aos="fade-left" data-aos-easing="ease-out-cubic" data-aos-duration="3000">
+                <div class="boxTitle">
+                    <h2>Dezavantajları ve Dikkat Edilmesi Gerekenler</h2>
+                </div>
+                <div class="boxBody">
+                    <ul>
+                        <li><b>Tarayıcı desteği hala tam değil:</b> Eski veya bazı mobil tarayıcılarda destek sınırlı olabilir (özellikle IE’de destek yoktur).</li>
+                        <li><b>Styling ve layout kontrolleri bazen zor olabilir:</b> Özellikle responsiveness için ekstra CSS gerekebilir.</li>
+                        <li><b>Yaygın modal kütüphaneler kadar gelişmiş özellikler yok:</b> Animasyon, kompleks yapı gibi gelişmiş etkileşimler için ekstra kod yazmak gerekebilir.</li>
+                        <li><b>Focus yönetimi:</b> Modal dialog açıldığında focus otomatik dialog içine gelir, ama özel durumlarda manuel yönetim gerekebilir.</li>
+                        <li><b>Tab sırası ve keyboard navigasyon: </b>Doğru yönetilmezse kullanıcı deneyimi olumsuz etkilenebilir.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="assets/plugins/prism/prism.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+    <script src="assets/js/app.js" defer></script>
+    <script src="assets/js/dialog.js" defer></script>
+
+</body>
+</html>

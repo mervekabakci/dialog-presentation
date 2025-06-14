@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dialog</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/plugins/prism/prism.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <link rel="stylesheet" href="assets/css/app.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav>
+                <a href="index.html">dialog Nedir?</a>
+                <a class="active" href="kullanim-ornekleri.html">Kullanım Örnekleri</a>
+            </nav>
+        </header>
+        <div class="boxes full">
+            <div class="box" data-aos="fade-up" data-aos-duration="1000">
+                 <div class="boxTitle">
+                    <h2>Kullanım Örnekleri</h2>
+                </div>
+                <div class="boxBody">
+                    <div class="codeTitle">
+                        Basic Kullanım Örneği
+                    </div>
+                    <p>
+                        <code>&lt;dialog&gt;</code> elementinin en basit kullanımı aşağıdaki gibidir. Burada herhangi bir stil eklenmemiştir.
+                    </p>
+
+                    
+                    <a class="fixBtn" href="#" id="openModal">Open Dialog</a>
+                
+                    <dialog class="basicDialog">
+                        <p>
+                            Bu bir dialog penceresi
+                        </p>
+
+                        <a class="fixBtn" href="#" id="closeModal">Close Dialog</a>
+                    </dialog>
+                    
+                    <strong>Html kod çıktısı</strong>
+                    <pre>
+                        <code class="language-html">
+                            <a href="#" id="openModal">Open Dialog</a>
+                            
+                            <dialog class="basicDialog">
+                                <p>
+                                    Bu bir dialog penceresi
+                                </p>
+
+                                <a href="#" id="closeModal">Close Dialog</a>
+                            </dialog>
+                        </code>
+                    </pre>
+
+
+                </div>
+            </div>
+        </div>
+
+
+        
+        <pre>
+            <code class="language-css">
+                p { 
+                    color: red 
+                }
+                main{
+                    width:100%;
+                }
+            </code>
+        </pre>
+        <pre>
+            <code class="language-js">
+                const dialogs = document.querySelectorAll("dialog");
+                for(const dialog of dialogs){
+                    dialog.addEventListener("click", function(){
+                        console.log("this");
+                    })
+                }
+            </code>
+        </pre>
+        <pre>
+            <code class="language-html">
+                <dialog>
+                    <div>Hello world</div>
+                </dialog>
+            </code>
+        </pre>
+        <pre>
+            <code class="language-html">
+                <dialog>
+                    <div>Hello world</div>
+                </dialog>
+            </code>
+        </pre>
+        <pre>
+            <code class="language-html">
+                <dialog>
+                    <div>Hello world</div>
+                </dialog>
+            </code>
+        </pre>
+        
+    </div>
+
+
+    <script src="assets/plugins/prism/prism.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+    <script src="assets/js/app.js" defer></script>
+    <script src="assets/js/dialog.js" defer></script>
+
+</body>
+</html>
